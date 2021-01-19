@@ -5,7 +5,8 @@ import { Text, View, StyleSheet } from 'react-native';
 export const AboutScreen = ({}) => {
   return (
     <View style={styles.center}>
-      <Text>AboutScreen</Text>
+      <Text>This is my study app</Text>
+      <Text>Version <Text style={{fontFamily: 'open-bold'}}>1.0.0</Text></Text>
     </View>
   )
 }

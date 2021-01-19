@@ -6,7 +6,7 @@ import { DATA } from '../data';
 export const PostScreen = ({route}) => {
   const { postId } = route.params;
 
-  const post = useMemo(() => DATA.find(p => rp.id === postId), [postId])
+  const post = useMemo(() => DATA.find(p => p.id === postId), [postId])
 
   if(!post) return null
 

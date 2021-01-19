@@ -10,7 +10,9 @@ export const BookedScreen = ({}) => {
   const navigation = useNavigation(); 
 
   const openPostHandler = post => {
-    navigation.navigate('Post', {postId: post.id, booked: post.booked})
+    navigation.navigate('Post', {
+       postId: post.id, booked: post.booked },
+    )
   }
 
   return (
