@@ -1,29 +1,30 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, StyleSheet} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { PostList } from '../components/Post';
-import { DATA } from '../data';
-
-
+import { useSelector } from 'react-redux';
 
 export const BookedScreen = ({}) => {
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
 
   const openPostHandler = post => {
     navigation.navigate('Post', {
-       postId: post.id, booked: post.booked },
-    )
-  }
+        postId: post.id, booked: post.booked,
+      },
+    );
+  };
+
+  const BookedPosts = useSelector(state => state.post.bookedPosts);
 
   return (
     <View style={styles.wrapper}>
-      <PostList data={DATA.filter(post => post.booked)} onOpen={openPostHandler}/>
+      <PostList data={BookedPosts} onOpen={openPostHandler} />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 10
-  }
-})
+    padding: 10,
+  },
+});
